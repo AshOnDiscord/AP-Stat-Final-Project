@@ -43,6 +43,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${atkinsonHyperlegible.variable} ${fascinate.variable} h-full antialiased`}
     >
+      <head>
+        <meta name="darkreader-lock" />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
