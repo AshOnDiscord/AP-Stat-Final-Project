@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Atkinson_Hyperlegible_Next,
+  Fascinate,
+} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -9,6 +14,17 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const atkinsonHyperlegible = Atkinson_Hyperlegible_Next({
+  variable: "--font-atkinson-hyperlegible",
+  subsets: ["latin"],
+});
+
+const fascinate = Fascinate({
+  variable: "--font-fascinate",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -25,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${atkinsonHyperlegible.variable} ${fascinate.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
