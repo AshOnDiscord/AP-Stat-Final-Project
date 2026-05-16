@@ -1,12 +1,12 @@
 import { ArrowRight } from "lucide-react";
 
 export default function TextDisplay({
-  group,
+  isAlt,
   next,
-}: Readonly<{ group: string; next: () => void }>) {
+}: Readonly<{ isAlt: boolean; next: () => void }>) {
   const text = `On a quiet morning, several people visited the local library to read, study, and borrow books. A student worked on homework at one table while another visitor looked through a magazine nearby. The library was calm and quiet, and people spoke softly as they moved between the shelves. Outside, a few people walked past on their way to work and school.`;
 
-  const font = group === "b" ? "font-fascinate" : "font-atkinson";
+  const font = isAlt ? "font-fascinate" : "font-atkinson";
   return (
     <div className="h-screen flex justify-center items-center bg-gray-50">
       <main className="flex flex-col gap-8 items-start">
@@ -23,6 +23,7 @@ export default function TextDisplay({
         <button
           className="group border border-gray-300 px-4 py-1 rounded-lg cursor-pointer flex gap-1 items-center hover:bg-gray-100 transition"
           onClick={next}
+          type="button"
         >
           Done reading{" "}
           <ArrowRight className="w-4 h-4 group-hover:ml-1 transition-all" />

@@ -3,8 +3,9 @@ import { useState } from "react";
 
 export default function Response({
   submit,
-}: Readonly<{ submit: (response: string) => void }>) {
+}: Readonly<{ submit: (response: string) => Promise<void> }>) {
   const [response, setResponse] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   return (
     <div className="h-screen flex justify-center items-center bg-gray-50">
@@ -22,8 +23,13 @@ export default function Response({
         ></textarea>
         <button
           className="border border-gray-300 px-4 py-1 rounded-lg cursor-pointer disabled:cursor-default disabled:text-gray-500 disabled:border-gray-200 transition hover:bg-gray-100 disabled:hover:bg-gray-50 flex items-center gap-1"
-          onClick={() => submit(response)}
-          disabled={response.trim().length < 10}
+          onClick={async () => {
+            setSubmitting(true);
+            await submit(response);
+            setSubmitting(false);
+          }}
+          disabled={response.trim().length < 10 || submitting}
+          type="button"
         >
           Submit
           <Check className="w-4 h-4" />
