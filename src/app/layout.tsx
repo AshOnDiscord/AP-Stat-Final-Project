@@ -44,6 +44,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${atkinsonHyperlegible.variable} ${fascinate.variable} h-full antialiased`}
     >
       <head>
+        <title>AP Stats Project</title>
         <meta name="darkreader-lock" />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
