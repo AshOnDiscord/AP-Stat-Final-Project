@@ -18,7 +18,7 @@ export default function TextDisplay({
           className={`w-[45ch] rounded-lg px-8 py-6 bg-white border border-gray-200 text-lg flex flex-col gap-4`}
         >
           <h1 className="uppercase text-gray-500 text-sm">Passage</h1>
-          <p className={`${font} text-lg`}>{text}</p>
+          <p className={`${font} text-lg select-none`}>{text}</p>
         </div>
         <button
           className="group border border-gray-300 px-4 py-1 rounded-lg cursor-pointer flex gap-1 items-center hover:bg-gray-100 transition"

@@ -20,5 +20,10 @@ export default async function Home() {
   console.log(
     `Group A count: ${count1}, Group B count: ${count2}, Assigned group: ${isAlt ? "B" : "A"}`,
   );
-  return <Router isAlt={isAlt} />;
+  return (
+    <>
+      {`${e1}, ${e2}, ${count1}, ${count2}, ${isAlt}`}
+      <Router isAlt={isAlt} />
+    </>
+  );
 }
