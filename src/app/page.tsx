@@ -1,6 +1,8 @@
 import { supabase } from "@/lib/supabase";
 import Router from "./Router";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const [{ count: count1, error: e1 }, { count: count2, error: e2 }] =
     await Promise.all([
