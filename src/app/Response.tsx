@@ -28,7 +28,7 @@ export default function Response({
             await submit(response);
             setSubmitting(false);
           }}
-          disabled={response.trim().length < 10 || submitting}
+          disabled={response.trim().length < 1 || submitting}
           type="button"
         >
           Submit

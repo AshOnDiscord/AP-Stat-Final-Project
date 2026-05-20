@@ -6,7 +6,7 @@ import z from "zod";
 export const runtime = "edge";
 
 const schema = z.object({
-  response: z.string().min(10),
+  response: z.string().min(1),
   reading_duration: z.number().int().positive(),
   isAlt: z.boolean(),
 });
